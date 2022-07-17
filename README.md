@@ -1,5 +1,5 @@
-In this repository i will present small part of funcionalities
-of new pyodide package which allows us to run python code directly in html code.
+## In this repository i will present small part of funcionalities
+## of new pyodide package which allows us to run python code directly in html code.
 
 I want to check out how powerfull is pyodide and i will show how to use it directly in our html code:
 1. Install pyodide with command "pip install pyodide"
