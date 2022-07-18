@@ -7,14 +7,18 @@
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
     <meta charset="UTF-8">
     <py-env>
-        - matplotlib - numpy - sklearn - paths: - ./plot.py
+        - matplotlib 
+        - numpy 
+        - sklearn 
+        - paths: 
+            - ./example2.py
     </py-env>
 </head>
 
 <body>
     <h1>This is example of using Py-script to generate a simple charts</h1>
     <div id="plot"></div>
-    <py-script output="plot">
+    <py-script output="plot" src="./example2.py">
 
     </py-script>
 </body>
