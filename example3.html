@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+	<title>Guessing Game</title>
+</head>
+<body>
+	<p>Guess number from 0 to 10</p>
+	<p id="guesses">Number of guesses</p>
+	<input type="text" name="guess" id="guess"/>
+	<input type="button", id="guessBtn" value="Guess">
+	<input type="button", id="restartBtn" value="Restart">
+	<p id="result"></p>
+	<py-script>
+		from js from document
+		from pyodide import create_proxy
+		import random
+
+		guesses = 0
+		number = random.randint(0,10)
+
+		def restart(e):
+			number = random.randint(0,10)
+			guesses = 0
+			pyscript.write("result", "")
+			pyscript.write("guesses", "Number of guesses: 0")
+
+		def guesses(e):
+			guesses += 1
+			inp = Element('guess').element
+			text = inp.value
+			inp.value = ""
+			if (text == str(number)):
+				pyscript.write("result", "Correct! You took " + str(guesses) + " guesses")
+			else:
+				pysript.write("result", "Wrong!")
+			pyscript.write("guesses", "Number of guesses: " + str(guesses))
+
+		guess_proxy = create_proxy(guess)
+		guess_button = document.getElementById("guessBtn")
+		guess_button.addEventListener("click", guess_proxy)
+
+		restart_proxy = create_proxy("restart")
+		restart_button = document.getElementById("restartBtn")
+		restart_button.addEventListener("click", restart_proxy)
+
+	<py-script>
+</body>
+</html>
